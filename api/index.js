@@ -28,11 +28,20 @@ const upload = multer({
 });
 
 app.use(express.static('uploads'));
+const allowedOrigins = ['https://bolgapp-beta.vercel.app', 'http://localhost:3000'];
+
 app.use(cors({
-  origin: 'https://bolgapp-beta.vercel.app',
+  origin: (origin, callback) => {
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true
+  credentials: true,
 }));
+
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static('uploads'));

@@ -31,7 +31,7 @@ export default function Header() {
 
   const logout = async () => {
     try {
-      await fetch('http://localhost:8000/logout', {
+      await fetch('https://bolg-backend-d9tv.onrender.com/logout', {
         credentials: 'include', // Include cookies
         method: 'POST', 
       });
