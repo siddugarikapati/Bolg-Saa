@@ -29,7 +29,7 @@ const upload = multer({
 
 app.use(express.static('uploads'));
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'https://bolgapp-beta.vercel.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));

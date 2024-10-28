@@ -8,7 +8,7 @@ export function UserContextProvider({ children }) {
     useEffect(() => {
         const fetchUserInfo = async () => {
             try {
-                const response = await fetch("http://localhost:8000/user", {
+                const response = await fetch("https://bolg-backend-d9tv.onrender.com/user", {
                     credentials: 'include', 
                 });
 

@@ -10,7 +10,7 @@ export default function RegisterPage() {
     ev.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:8000/register', {
+      const response = await fetch('https://bolg-backend-d9tv.onrender.com/register', {
         method: 'POST',
         body: JSON.stringify({ username, password }),
         headers: { 'Content-Type': 'application/json' },

@@ -29,7 +29,7 @@ export default function CreateNewPost() {
     }
 
     try {
-      const response = await fetch('http://localhost:8000/post', {
+      const response = await fetch('https://bolg-backend-d9tv.onrender.com/post', {
         method: 'POST',
         body: data,
         credentials: 'include',

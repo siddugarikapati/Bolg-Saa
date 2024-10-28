@@ -12,7 +12,7 @@ export default function PostPage() {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`http://localhost:8000/post/${id}`) // Fetch post data
+        fetch(`https://bolg-backend-d9tv.onrender.com/post/${id}`) // Fetch post data
             .then(response => response.json())
             .then(postInfo => {
                 setPostInfo(postInfo);
@@ -27,7 +27,7 @@ export default function PostPage() {
         const confirmed = window.confirm("Are you sure you want to delete this post?");
         if (!confirmed) return;
 
-        const response = await fetch(`http://localhost:8000/post/${id}`, {
+        const response = await fetch(`https://bolg-backend-d9tv.onrender.com/post/${id}`, {
             method: 'DELETE',
             credentials: 'include',
         });
@@ -61,7 +61,7 @@ export default function PostPage() {
                 </div>
             )}
             <div className="image-view">
-                <img src={`http://localhost:8000/${postInfo.cover}`} alt={postInfo.title} />
+                <img src={`https://bolg-backend-d9tv.onrender.com/${postInfo.cover}`} alt={postInfo.title} />
             </div>
             <div dangerouslySetInnerHTML={{ __html: postInfo.content }} />
         </div>

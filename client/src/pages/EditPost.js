@@ -13,7 +13,7 @@ export default function EditPost() {
 
   useEffect(() => {
     const fetchPost = async () => {
-      const response = await fetch('http://localhost:8000/post/' + id);
+      const response = await fetch('https://bolg-backend-d9tv.onrender.com/post/' + id);
       if (response.ok) {
         const postInfo = await response.json();
         setTitle(postInfo.title);
@@ -39,7 +39,7 @@ export default function EditPost() {
       data.set('file', files?.[0]);
     }
 
-    const response = await fetch('http://localhost:8000/post', {
+    const response = await fetch('https://bolg-backend-d9tv.onrender.com/post', {
       method: 'PUT',
       body: data,
       credentials: 'include',
@@ -56,7 +56,7 @@ export default function EditPost() {
     const confirmed = window.confirm("Are you sure you want to delete this post?");
     if (!confirmed) return;
 
-    const response = await fetch(`http://localhost:8000/post/${id}`, {
+    const response = await fetch(`https://bolg-backend-d9tv.onrender.com/post/${id}`, {
       method: 'DELETE',
       credentials: 'include',
     });

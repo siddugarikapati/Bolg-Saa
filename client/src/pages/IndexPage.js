@@ -7,7 +7,7 @@ export default function IndexPage() {
   const { userInfo } = useContext(UserContext); 
 
   useEffect(() => {
-    fetch('http://localhost:8000/post', {
+    fetch('https://bolg-backend-d9tv.onrender.com/post', {
       credentials: 'include', 
     })
       .then(response => response.json())
